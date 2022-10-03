@@ -1,0 +1,27 @@
+body {
+    /* background-color: blueviolet; */
+}
+.header{
+    text-align: center;
+}
+.container{
+    /* background-color: peachpuff; */
+    border: 3px solid black;
+    height: 600px;
+    width: 700px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+#grid{
+    height: 100px;
+    width: 100px;
+    border: 1px;
+    border-radius: 50px;
+    outline: solid black;
+}
+.indicator{
+    text-align: center;
+    font-size: 30px;
+}
