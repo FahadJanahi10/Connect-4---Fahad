@@ -1,8 +1,24 @@
 const grid = document.querySelector(".container");
 
+const board = [
+    0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0,
+];
+
+let currentPlayer = 1;
+// board.forEach(row => {
+//     for(let r = 0; r < 6; r++){
+//         for(let c = 0; c < 7; c++)
+//     }
+// })
 for(let i = 0; i < 42; i++){
     let tile = document.createElement("div");
     tile.className = "tile";
+    tile.id = "tile";
     grid.appendChild(tile);
 
     tile.onmouseenter =  () => {
@@ -15,7 +31,17 @@ for(let i = 0; i < 42; i++){
 
 
 function onColumnClick(column){
+    let availabeRows = board.filter((_, index) => index % 7 === column).lastIndexOf(0);
+    if(availabeRows === -1){
+        return;
+    }
+    board[(availabeRows * 7) + column] = currentPlayer;
+    let token = grid.children[(availabeRows * 7) + column];
 
+    let tile = document.createElement("div");
+    tile.className = "tile"
+    tile.dataset.taken = true;
+    token.appendChild(tile)
 }
 
 
