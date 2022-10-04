@@ -1,12 +1,12 @@
-body {
-    /* background-color: blueviolet; */
-}
+body {}
 .header{
     text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
 }
 .container{
-    /* background-color: peachpuff; */
     border: 3px solid black;
+    background-color: silver;
     height: 600px;
     width: 700px;
     margin: auto;
@@ -14,14 +14,10 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-#grid{
-    height: 100px;
-    width: 100px;
-    border: 1px;
-    border-radius: 50px;
-    outline: solid black;
-}
 .indicator{
     text-align: center;
     font-size: 30px;
+}
+.cell{
+    border: 1px solid;
 }
