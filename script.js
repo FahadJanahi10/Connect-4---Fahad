@@ -1,13 +1,34 @@
 const grid = document.querySelector(".container");
 
 for(let i = 0; i < 42; i++){
-    let div = document.createElement("div");
-    div.className = "cell";
-    grid.appendChild(div);
+    let tile = document.createElement("div");
+    tile.className = "tile";
+    grid.appendChild(tile);
 
-    div.onmouseenter =  () => {
-        console.log(i);
+    tile.onmouseenter =  () => {
+        onMouseEnteredColumn(i % 7);
     }
+    tile.onclick = () =>{
+        onColumnClick(i % 7);
+    }
+}
+
+
+function onColumnClick(column){
+
+}
+
+
+function onMouseEnteredColumn(column){
+    let unUsedToken = document.querySelector("[data-taken='false']");
+    if(unUsedToken){
+        unUsedToken.parentElement.removeChild(unUsedToken);
+    }
+    let tile = grid.children[column];
+    let token = document.createElement("div");
+    token.className = "token";
+    token.dataset.taken = false;
+    tile.appendChild(token);
 }
 
 

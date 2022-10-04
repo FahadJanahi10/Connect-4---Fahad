@@ -18,6 +18,12 @@ body {}
     text-align: center;
     font-size: 30px;
 }
-.cell{
-    border: 1px solid;
+.tile{
+    display: flex;
+    border: 1px solid crimson;
+}
+.token{
+    background-color: blue;
+    border-radius: 50%;
+    flex-grow: 1;
 }
